@@ -15,8 +15,9 @@
                 {{post.date}}
                 <br>{{post.content}}
             </b-card-text>
-
-            <b-button href="#" variant="primary">Go Detail</b-button>
+            <router-link :to="{ name: 'Detail', params: { id: post.number }}">
+                Go Detail
+            </router-link>
         </b-card>
     </b-card-group>
 </template>
@@ -26,8 +27,11 @@ export default {
     name: 'post',
     props: {
         posts : Array
-    }
+    },
+    methods: {
 
+    }
+    
 }
 </script>
 
