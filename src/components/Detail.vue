@@ -1,20 +1,51 @@
 <template>
-    <b-container style="margin:10px">
+    <b-container>
         <b-row>
-            <b-col cols="3" style="padding-right:0px;padding-left:0px;">
-                <ul class="list-group">
-                    <li class="list-group-item" v-for="post in posts" :key="post">
-                        <p style="font-size:12px">{{post.title}}</p>
-                        <p style="font-size:10px">{{post.date}}</p>
-                    </li>
-                </ul>
+            <b-col cols="2" style="background-color: #eee;padding:10px">
+                <b-nav vertical>
+                    <b-nav-item>
+                        <router-link v-if="$route.params.id+2 <= posts.length-1" :to="{ name: 'Detail', params: { id: posts[$route.params.id+2].number }}">
+                            <p style="font-size:12px">{{posts[$route.params.id+2].title}}</p>
+                        </router-link>
+                    </b-nav-item>
+                    <b-nav-item>
+                        <router-link v-if="$route.params.id+1 <= posts.length-1" :to="{ name: 'Detail', params: { id: posts[$route.params.id+1].number }}">
+                            <p style="font-size:12px">{{posts[$route.params.id+1].title}}</p>
+                        </router-link>
+                    </b-nav-item>
+
+                        <b-nav-item>
+                            <p style="font-size:12px;color:blue">{{posts[$route.params.id].title}}</p>
+                        </b-nav-item>
+
+                    <b-nav-item>
+                        <router-link v-if="$route.params.id-1 >= 0" :to="{ name: 'Detail', params: { id: posts[$route.params.id-1].number }}">
+                            <p style="font-size:12px">{{posts[$route.params.id-1].title}}</p>
+                        </router-link>
+                    </b-nav-item>
+                    <b-nav-item>
+                        <router-link v-if="$route.params.id-2 >= 0" :to="{ name: 'Detail', params: { id: posts[$route.params.id-2].number }}">
+                            <p style="font-size:12px">{{posts[$route.params.id-2].title}}</p>
+                        </router-link>
+                    </b-nav-item>
+                </b-nav>
             </b-col>
-            <b-col cols="9">
-                <h4>{{posts[$route.params.id].title}}</h4>
-                <hr>
-                <h5>{{posts[$route.params.id].date}}</h5>
-                <hr>
-                <p>{{posts[$route.params.id].content}}</p>
+            <b-col cols="10">
+                <div style="padding:20px">
+                    <h4 style="text-align:left">{{posts[$route.params.id].title}}</h4>
+                    <p style="text-align:right">{{posts[$route.params.id].date}}</p>
+                    <hr>
+                    <p style="text-align:left">{{posts[$route.params.id].content}}</p>
+                    <hr>
+                    <div style="width:100%;text-align:right">
+                        <router-link v-if="$route.params.id-1 >= 0" :to="{ name: 'Detail', params: { id: posts[$route.params.id-1].number }}">
+                            <button class="dtlbtn">이전</button>
+                        </router-link>
+                        <router-link v-if="$route.params.id+1 <= posts.length-1" :to="{ name: 'Detail', params: { id: posts[$route.params.id+1].number }}">
+                            <button class="dtlbtn">이후</button>
+                        </router-link>
+                    </div>
+                </div>
             </b-col>
         </b-row>
     </b-container>
@@ -31,5 +62,10 @@ export default {
 <style>
 hr {
     margin : 20px;
+}
+.container {
+    width: 100%;
+    margin-right: 0px; 
+    margin-left: 0px; 
 }
 </style>

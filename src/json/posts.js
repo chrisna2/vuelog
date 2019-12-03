@@ -12,10 +12,46 @@ export default [
         number : 1
     },
     {
-        title : '셋 째 프로젝트 : 현피 앱',
+        title : '셋 째 프로젝트 : 현피 앱1',
         content : '거리를 설정하면 가장 가까운 파이터를 소개해드려요! 서로 싸워보세요',
         date : 'September 24, 2019',
         number : 2
+    },
+    {
+        title : '셋 째 프로젝트 : 현피 앱2',
+        content : '거리를 설정하면 가장 가까운 파이터를 소개해드려요! 서로 싸워보세요',
+        date : 'September 24, 2019',
+        number : 3
+    },
+    {
+        title : '셋 째 프로젝트 : 현피 앱3',
+        content : '거리를 설정하면 가장 가까운 파이터를 소개해드려요! 서로 싸워보세요',
+        date : 'September 24, 2019',
+        number : 4
+    },
+    {
+        title : '셋 째 프로젝트 : 현피 앱4',
+        content : '거리를 설정하면 가장 가까운 파이터를 소개해드려요! 서로 싸워보세요',
+        date : 'September 24, 2019',
+        number : 5
+    },
+    {
+        title : '셋 째 프로젝트 : 현피 앱5',
+        content : '거리를 설정하면 가장 가까운 파이터를 소개해드려요! 서로 싸워보세요',
+        date : 'September 24, 2019',
+        number : 6
+    },
+    {
+        title : '셋 째 프로젝트 : 현피 앱6',
+        content : '거리를 설정하면 가장 가까운 파이터를 소개해드려요! 서로 싸워보세요',
+        date : 'September 24, 2019',
+        number : 7
+    },
+    {
+        title : '셋 째 프로젝트 : 현피 앱7',
+        content : '거리를 설정하면 가장 가까운 파이터를 소개해드려요! 서로 싸워보세요',
+        date : 'September 24, 2019',
+        number : 8
     }
 ];
      
