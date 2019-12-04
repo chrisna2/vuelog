@@ -37,14 +37,21 @@
                     <hr>
                     <p style="text-align:left">{{posts[$route.params.id].content}}</p>
                     <hr>
-                    <div style="width:100%;text-align:right">
-                        <router-link v-if="$route.params.id-1 >= 0" :to="{ name: 'Detail', params: { id: posts[$route.params.id-1].number }}">
-                            <button class="dtlbtn">이전</button>
-                        </router-link>
-                        <router-link v-if="$route.params.id+1 <= posts.length-1" :to="{ name: 'Detail', params: { id: posts[$route.params.id+1].number }}">
-                            <button class="dtlbtn">이후</button>
-                        </router-link>
-                    </div>
+                    <b-container style="width:100%;padding:0px">
+                        <b-row style="width:100%">
+                            <b-col cols="6">
+                            </b-col>
+                            <b-col cols="6" style="text-align:right;margin:0px;padding:0px">
+                                <router-link v-if="$route.params.id-1 >= 0" :to="{ name: 'Detail', params: { id: posts[$route.params.id-1].number }}">
+                                    <b-button variant="primary">이전</b-button>
+                                </router-link>
+                                &nbsp;
+                                <router-link v-if="$route.params.id+1 <= posts.length-1" :to="{ name: 'Detail', params: { id: posts[$route.params.id+1].number }}">
+                                    <b-button variant="info">이후</b-button>
+                                </router-link>
+                            </b-col>
+                        </b-row>
+                    </b-container>
                 </div>
             </b-col>
         </b-row>
